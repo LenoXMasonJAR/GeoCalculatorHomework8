@@ -8,7 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="8.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -66,9 +66,8 @@
                                                 <constraint firstItem="JMU-q8-keT" firstAttribute="width" secondItem="qg4-fN-8rt" secondAttribute="width" id="8cn-2l-6yf"/>
                                             </constraints>
                                         </stackView>
-                                        <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wLG-wG-O2Q">
+                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLG-wG-O2Q">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aqK-7e-jn2">
@@ -96,20 +95,24 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="wLG-wG-O2Q" firstAttribute="leading" secondItem="8gl-Gb-CZ5" secondAttribute="leading" id="121-75-XGa"/>
                                         <constraint firstItem="aqK-7e-jn2" firstAttribute="centerY" secondItem="8gl-Gb-CZ5" secondAttribute="centerY" id="5CZ-yj-wJQ"/>
                                         <constraint firstItem="QTx-kf-BgO" firstAttribute="leading" secondItem="8gl-Gb-CZ5" secondAttribute="leading" id="Bqc-OH-OME"/>
+                                        <constraint firstItem="wLG-wG-O2Q" firstAttribute="top" secondItem="8gl-Gb-CZ5" secondAttribute="top" id="GnD-6L-goV"/>
                                         <constraint firstItem="QTx-kf-BgO" firstAttribute="top" secondItem="8gl-Gb-CZ5" secondAttribute="top" id="Jlj-Ej-9Es"/>
+                                        <constraint firstAttribute="bottom" secondItem="wLG-wG-O2Q" secondAttribute="bottom" id="QzP-lO-3Db"/>
                                         <constraint firstAttribute="trailing" secondItem="QTx-kf-BgO" secondAttribute="trailing" id="R3q-pc-9rk"/>
                                         <constraint firstAttribute="bottom" secondItem="QTx-kf-BgO" secondAttribute="bottom" id="Woh-MX-Gx0"/>
                                         <constraint firstItem="aqK-7e-jn2" firstAttribute="centerX" secondItem="8gl-Gb-CZ5" secondAttribute="centerX" id="fJo-r2-hCH"/>
                                         <constraint firstItem="aqK-7e-jn2" firstAttribute="leading" secondItem="8gl-Gb-CZ5" secondAttribute="leading" id="rLS-j5-7aG"/>
+                                        <constraint firstAttribute="trailing" secondItem="wLG-wG-O2Q" secondAttribute="trailing" id="xW5-pe-gOX"/>
                                         <constraint firstAttribute="trailing" secondItem="aqK-7e-jn2" secondAttribute="trailing" id="yDu-SS-IaG"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="destPoint" destination="quX-4p-aRx" id="tbs-VI-6ES"/>
-                                    <outlet property="origPoint" destination="kBW-Ru-op2" id="c7F-4c-YfV"/>
-                                    <outlet property="timestamp" destination="idv-2E-bXc" id="BZ4-HH-m85"/>
+                                    <outlet property="destPoint" destination="quX-4p-aRx" id="uqG-7Z-VRW"/>
+                                    <outlet property="origPoint" destination="kBW-Ru-op2" id="kJU-Av-TrH"/>
+                                    <outlet property="timestamp" destination="idv-2E-bXc" id="Vf1-S1-YR0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
