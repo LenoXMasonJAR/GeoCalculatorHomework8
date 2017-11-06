@@ -5,11 +5,10 @@
 //  Created by Jonathan Engelsma on 1/23/17.
 //  Copyright © 2017 Jonathan Engelsma. All rights reserved.
 //
-
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, HistoryTableViewControllerDelegate {
+class ViewController: UIViewController, HistoryTableViewControllerDelegate{
     
     func selectEntry(entry: LocationLookup) {
         self.p1Lat.text = entry.origLat.description
@@ -19,7 +18,11 @@ class ViewController: UIViewController, HistoryTableViewControllerDelegate {
         self.doCalculatations()
     }
     
-
+    var entries : [LocationLookup] = [
+        LocationLookup(origLat: 90.0, origLng: 0.0, destLat: -90.0, destLng: 0.0, timestamp: Date.distantPast),
+        LocationLookup(origLat: -90.0, origLng: 0.0, destLat: 90.0, destLng: 0.0, timestamp: Date.distantFuture)]
+    
+    
     @IBOutlet weak var p1Lat: DecimalMinusTextField!
     @IBOutlet weak var p1Lng: DecimalMinusTextField!
     @IBOutlet weak var p2Lat: DecimalMinusTextField!
@@ -30,17 +33,13 @@ class ViewController: UIViewController, HistoryTableViewControllerDelegate {
     
     var distanceUnits : String = "Kilometers"
     var bearingUnits : String = "Degrees"
-    var entries : [LocationLookup] = [
-        LocationLookup(origLat: 90.0, origLng: 0.0, destLat: -90.0, destLng: 0.0, timestamp: Date.distantPast),
-        LocationLookup(origLat: -90.0, origLng: 0.0, destLat: 90.0, destLng: 0.0, timestamp: Date.distantFuture)]
-    @IBOutlet weak var settingsButton: UIBarButtonItem!
     
-    @IBOutlet weak var historyButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = BACKGROUND_COLOR
+        // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,7 +66,8 @@ class ViewController: UIViewController, HistoryTableViewControllerDelegate {
         } else {
             self.bearingLabel.text = "Bearing: \((bearing * 1777.7777777778).rounded() / 100.0) mils."
         }
-        entries.append(LocationLookup(origLat:p1lt, origLng:p1ln, destLat:p2lt, destLng:p2ln, timestamp: Date()))
+        entries.append(LocationLookup(origLat: p1lt, origLng: p1ln, destLat: p2lt,
+                                      destLng: p2ln, timestamp: Date()))
     }
     
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
@@ -81,7 +81,7 @@ class ViewController: UIViewController, HistoryTableViewControllerDelegate {
         self.view.endEditing(true)
     }
     
-
+    
     @IBAction func clearButtonPressed(_ sender: UIButton) {
         self.p1Lat.text = ""
         self.p1Lng.text = ""
@@ -98,20 +98,19 @@ class ViewController: UIViewController, HistoryTableViewControllerDelegate {
                 dest.entries = self.entries
                 dest.delegate = self
             }
-        }
-        if segue.identifier == "settingsSegue" {
+        } else if segue.identifier == "settingsSegue" {
             if let dest = segue.destination as? SettingsViewController {
                 dest.dUnits = self.distanceUnits
                 dest.bUnits = self.bearingUnits
                 dest.delegate = self
             }
-        }else if segue.identifier == "searchSegue" {
+        } else if segue.identifier == "searchSegue" {
             if let dest = segue.destination as? LocationSearchViewController{
                 dest.delegate = self
             }
         }
+        
     }
- 
 }
 
 extension ViewController : SettingsViewControllerDelegate
@@ -120,6 +119,16 @@ extension ViewController : SettingsViewControllerDelegate
     {
         self.distanceUnits = distanceUnits
         self.bearingUnits = bearingUnits
+        self.doCalculatations()
+    }
+}
+extension ViewController: LocationSearchDelegate {
+    func set(calculationData: LocationLookup)
+    {
+        self.p1Lat.text = "\(calculationData.origLat)"
+        self.p1Lng.text = "\(calculationData.origLng)"
+        self.p2Lat.text = "\(calculationData.destLat)"
+        self.p2Lng.text = "\(calculationData.destLng)"
         self.doCalculatations()
     }
 }

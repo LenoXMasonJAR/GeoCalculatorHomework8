@@ -2,7 +2,7 @@
 //  LocationSearchViewController.swift
 //  GeoCalculator
 //
-//  Created by Mason Mahoney on 11/6/17.
+//  Created by Erin Blackwell on 11/2/17.
 //  Copyright © 2017 Jonathan Engelsma. All rights reserved.
 //
 import UIKit
@@ -189,4 +189,3 @@ extension LocationSearchViewController: GMSAutocompleteViewControllerDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
-
