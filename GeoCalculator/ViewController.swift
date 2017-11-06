@@ -105,6 +105,10 @@ class ViewController: UIViewController, HistoryTableViewControllerDelegate {
                 dest.bUnits = self.bearingUnits
                 dest.delegate = self
             }
+        }else if segue.identifier == "searchSegue" {
+            if let dest = segue.destination as? LocationSearchViewController{
+                dest.delegate = self
+            }
         }
     }
  
