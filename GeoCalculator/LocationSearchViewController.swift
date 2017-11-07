@@ -2,7 +2,7 @@
 //  LocationSearchViewController.swift
 //  GeoCalculator
 //
-//  Created by Erin Blackwell on 11/2/17.
+//  Created by Mason Mahoney on 11/5/17.
 //  Copyright © 2017 Jonathan Engelsma. All rights reserved.
 //
 import UIKit
