@@ -7,6 +7,7 @@
 //
 import UIKit
 import GooglePlaces
+import Firebase
 
 
 let BACKGROUND_COLOR = UIColor.init(colorLiteralRed:0.000, green:0.369, blue:0.420,
@@ -28,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.statusBarStyle = UIStatusBarStyle.lightContent
         
         GMSPlacesClient.provideAPIKey(GOOGLE_PLACE_API_KEY)
+        FirebaseApp.configure()
         
         let navAppearance = UINavigationBar.appearance()
         navAppearance.barTintColor = BACKGROUND_COLOR

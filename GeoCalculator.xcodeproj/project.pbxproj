@@ -13,6 +13,7 @@
 		094251DA1F96917300D8C217 /* GeoCalcLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094251D91F96917300D8C217 /* GeoCalcLabel.swift */; };
 		094251DC1F9691D700D8C217 /* GeoCalcTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094251DB1F9691D700D8C217 /* GeoCalcTextField.swift */; };
 		0971CEC91FAA1ABB00889C93 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971CEC81FAA1ABB00889C93 /* HistoryTableViewCell.swift */; };
+		09803CBD1FBA118400C07D28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09803CBC1FBA118300C07D28 /* GoogleService-Info.plist */; };
 		09BA17F41FB0C42100D621D9 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA17F31FB0C42100D621D9 /* LocationSearchViewController.swift */; };
 		51CF41831709A629E21ECA9A /* Pods_GeoCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F2DB95313804629869BC06 /* Pods_GeoCalculator.framework */; };
 		8F4E21AD2EC8DC638CFA7070 /* Pods_GeoCalculatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF46EDCC4A077C642661722 /* Pods_GeoCalculatorUITests.framework */; };
@@ -54,6 +55,7 @@
 		094251D91F96917300D8C217 /* GeoCalcLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCalcLabel.swift; sourceTree = "<group>"; };
 		094251DB1F9691D700D8C217 /* GeoCalcTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCalcTextField.swift; sourceTree = "<group>"; };
 		0971CEC81FAA1ABB00889C93 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		09803CBC1FBA118300C07D28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09BA17F31FB0C42100D621D9 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
 		1EF46EDCC4A077C642661722 /* Pods_GeoCalculatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoCalculatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F24CCE2872D2CC31C4F6D6 /* Pods-GeoCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeoCalculator/Pods-GeoCalculator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				9EDE87EA1E36AC2C00C2F900 /* Assets.xcassets */,
 				9EDE87EC1E36AC2C00C2F900 /* LaunchScreen.storyboard */,
 				9EDE87EF1E36AC2C00C2F900 /* Info.plist */,
+				09803CBC1FBA118300C07D28 /* GoogleService-Info.plist */,
 				9EC2C62E1E4A690B009BC940 /* SettingsViewController.swift */,
 				091D598B1FA8FB8C00016EA8 /* LocationLookup.swift */,
 				091D598F1FA92EDC00016EA8 /* HistoryTableViewController.swift */,
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EDE87EE1E36AC2C00C2F900 /* LaunchScreen.storyboard in Resources */,
+				09803CBD1FBA118400C07D28 /* GoogleService-Info.plist in Resources */,
 				9EDE87EB1E36AC2C00C2F900 /* Assets.xcassets in Resources */,
 				9EDE87E91E36AC2C00C2F900 /* Main.storyboard in Resources */,
 			);
@@ -468,10 +472,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GeoCalculator/Pods-GeoCalculator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
