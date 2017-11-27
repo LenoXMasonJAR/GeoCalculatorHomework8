@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		091D598C1FA8FB8C00016EA8 /* LocationLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D598B1FA8FB8C00016EA8 /* LocationLookup.swift */; };
 		091D59901FA92EDC00016EA8 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D598F1FA92EDC00016EA8 /* HistoryTableViewController.swift */; };
+		092784421FC493AA005D40AD /* Weather.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 092784411FC493AA005D40AD /* Weather.xcassets */; };
+		092784441FC493F6005D40AD /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092784431FC493F6005D40AD /* Weather.swift */; };
+		0927844A1FC4A9AD005D40AD /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092784491FC4A9AD005D40AD /* WeatherService.swift */; };
 		094251D81F96911600D8C217 /* GeoCalcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094251D71F96911600D8C217 /* GeoCalcButton.swift */; };
 		094251DA1F96917300D8C217 /* GeoCalcLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094251D91F96917300D8C217 /* GeoCalcLabel.swift */; };
 		094251DC1F9691D700D8C217 /* GeoCalcTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094251DB1F9691D700D8C217 /* GeoCalcTextField.swift */; };
@@ -51,6 +54,9 @@
 /* Begin PBXFileReference section */
 		091D598B1FA8FB8C00016EA8 /* LocationLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLookup.swift; sourceTree = "<group>"; };
 		091D598F1FA92EDC00016EA8 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		092784411FC493AA005D40AD /* Weather.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Weather.xcassets; sourceTree = "<group>"; };
+		092784431FC493F6005D40AD /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		092784491FC4A9AD005D40AD /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		094251D71F96911600D8C217 /* GeoCalcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCalcButton.swift; sourceTree = "<group>"; };
 		094251D91F96917300D8C217 /* GeoCalcLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCalcLabel.swift; sourceTree = "<group>"; };
 		094251DB1F9691D700D8C217 /* GeoCalcTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCalcTextField.swift; sourceTree = "<group>"; };
@@ -158,9 +164,11 @@
 				094251DB1F9691D700D8C217 /* GeoCalcTextField.swift */,
 				9EDE88111E36AF3800C2F900 /* DecimalMinusTextField.swift */,
 				9EDE87E51E36AC2C00C2F900 /* ViewController.swift */,
+				092784431FC493F6005D40AD /* Weather.swift */,
 				9EDE88131E36B02700C2F900 /* CLLocationExtensions.swift */,
 				9EDE87E71E36AC2C00C2F900 /* Main.storyboard */,
 				9EDE87EA1E36AC2C00C2F900 /* Assets.xcassets */,
+				092784411FC493AA005D40AD /* Weather.xcassets */,
 				9EDE87EC1E36AC2C00C2F900 /* LaunchScreen.storyboard */,
 				9EDE87EF1E36AC2C00C2F900 /* Info.plist */,
 				09803CBC1FBA118300C07D28 /* GoogleService-Info.plist */,
@@ -169,6 +177,7 @@
 				091D598F1FA92EDC00016EA8 /* HistoryTableViewController.swift */,
 				0971CEC81FAA1ABB00889C93 /* HistoryTableViewCell.swift */,
 				09BA17F31FB0C42100D621D9 /* LocationSearchViewController.swift */,
+				092784491FC4A9AD005D40AD /* WeatherService.swift */,
 			);
 			path = GeoCalculator;
 			sourceTree = "<group>";
@@ -321,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092784421FC493AA005D40AD /* Weather.xcassets in Resources */,
 				9EDE87EE1E36AC2C00C2F900 /* LaunchScreen.storyboard in Resources */,
 				09803CBD1FBA118400C07D28 /* GoogleService-Info.plist in Resources */,
 				9EDE87EB1E36AC2C00C2F900 /* Assets.xcassets in Resources */,
@@ -516,8 +526,10 @@
 				9EDE87E61E36AC2C00C2F900 /* ViewController.swift in Sources */,
 				091D59901FA92EDC00016EA8 /* HistoryTableViewController.swift in Sources */,
 				9EC2C62F1E4A690B009BC940 /* SettingsViewController.swift in Sources */,
+				0927844A1FC4A9AD005D40AD /* WeatherService.swift in Sources */,
 				094251D81F96911600D8C217 /* GeoCalcButton.swift in Sources */,
 				09BA17F41FB0C42100D621D9 /* LocationSearchViewController.swift in Sources */,
+				092784441FC493F6005D40AD /* Weather.swift in Sources */,
 				094251DA1F96917300D8C217 /* GeoCalcLabel.swift in Sources */,
 				0971CEC91FAA1ABB00889C93 /* HistoryTableViewCell.swift in Sources */,
 				091D598C1FA8FB8C00016EA8 /* LocationLookup.swift in Sources */,

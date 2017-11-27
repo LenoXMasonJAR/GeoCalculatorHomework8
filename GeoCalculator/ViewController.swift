@@ -13,6 +13,8 @@ class ViewController: UIViewController, HistoryTableViewControllerDelegate{
     
     fileprivate var ref : DatabaseReference?
     
+    let wAPI = DarkSkyWeatherService.getInstance()
+    
     func selectEntry(entry: LocationLookup) {
         self.p1Lat.text = entry.origLat.description
         self.p1Lng.text = entry.origLng.description
@@ -25,6 +27,13 @@ class ViewController: UIViewController, HistoryTableViewControllerDelegate{
         LocationLookup(origLat: 90.0, origLng: 0.0, destLat: -90.0, destLng: 0.0, timestamp: Date.distantPast),
         LocationLookup(origLat: -90.0, origLng: 0.0, destLat: 90.0, destLng: 0.0, timestamp: Date.distantFuture)]
     
+
+    @IBOutlet weak var firstViewWeather: UIImageView!
+    @IBOutlet weak var secondViewWeather: UIImageView!
+    @IBOutlet weak var Weather1Description: GeoCalcLabel!
+    @IBOutlet weak var Weather2Description: GeoCalcLabel!
+    @IBOutlet weak var Weather1Label: GeoCalcLabel!
+    @IBOutlet weak var Weather2Label: GeoCalcLabel!
     
     @IBOutlet weak var p1Lat: DecimalMinusTextField!
     @IBOutlet weak var p1Lng: DecimalMinusTextField!
@@ -48,6 +57,16 @@ class ViewController: UIViewController, HistoryTableViewControllerDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func clearWeatherViews(){
+        self.firstViewWeather.image = nil
+        self.Weather1Label.text = ""
+        self.Weather1Description.text = ""
+        self.secondViewWeather.image = nil
+        self.Weather2Label.text = ""
+        self.Weather2Description.text = ""
+        
     }
     
     func doCalculatations()
@@ -76,6 +95,27 @@ class ViewController: UIViewController, HistoryTableViewControllerDelegate{
                                    destLng: p2ln, timestamp: Date())
         let newChild = self.ref?.child("history").childByAutoId()
         newChild?.setValue(self.toDictionary(vals: entry))
+        
+        wAPI.getWeatherForDate(date: Date(), forLocation: (p1lt, p1ln)) { (weather) in
+            if let w = weather {
+                DispatchQueue.main.async {
+                    self.Weather1Label.text = "\(w.temperature.roundTo(places:1))"
+                    self.firstViewWeather.image = UIImage(named: w.iconName)
+                    self.Weather1Description.text = w.summary
+                }
+            }
+        }
+        
+        wAPI.getWeatherForDate(date: Date(), forLocation: (p2lt, p2ln)) { (weather) in
+            if let w = weather {
+                DispatchQueue.main.async {
+                    self.Weather2Label.text = "\(w.temperature.roundTo(places:1))"
+                    self.secondViewWeather.image = UIImage(named: w.iconName)
+                    self.Weather2Description.text = w.summary
+                }
+            }
+        }
+        
     }
     
     func toDictionary(vals: LocationLookup) -> NSDictionary {
